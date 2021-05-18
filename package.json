@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "build": "netlify-lambda build express",
-    "dev": "cross-env NODE_ENV=development nodemon server-local.js",
-    "prod": "cross-env NODE_ENV=production nodemon server-local.js",
-    "start": "node server-local.js"
+    "dev": "cross-env NODE_ENV=development nodemon server.js",
+    "prod": "cross-env NODE_ENV=production nodemon server.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",

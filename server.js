@@ -8,20 +8,20 @@ const cors = require('cors')
 const morgan = require("morgan")
 const cookieParser = require('cookie-parser')
 const cookieSession = require('cookie-session');
-const  keys = require("../keys/index");
+const  keys = require("./keys/index");
 
 // initial dotenv configuration
 require('dotenv').config()
 
-require("../models/Own")
-require("../models/Image")
-require("../models/Project")
-require("../models/Post")
-require("../models/Testimonial")
+require("./models/Own")
+require("./models/Image")
+require("./models/Project")
+require("./models/Post")
+require("./models/Testimonial")
 
 
 
-const routes  = require("../routes/index")
+const routes  = require("./routes/index")
 
 function handleStaticFileServer(req, res){
   const mimeType = {
@@ -62,7 +62,6 @@ function handleStaticFileServer(req, res){
 
 }
 
-const app = express();
 
 // router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
 // router.post('/', (req, res) => res.json({ postBody: req.body }));
@@ -136,7 +135,7 @@ app.get("/static/**", (req, res)=>{
 
 app.use("/static", express.static("static"))
 
-const connectDb = require("../database/db")
+const connectDb = require("./database/db")
 connectDb(err=>{
   if(err){
     console.log("mongodb connection fail");
